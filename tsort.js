@@ -46,7 +46,7 @@ TopoSort.prototype.sort = function(){
   // This error case can be handled by check incoming edges count in next step.
   for(node in this.ins){
     if(this.ins[node] === 0){
-      // Any node does not exist in the map, will have 0 incoming edges. Save sometime when final sort validation.
+      // Any node does not exist in the 'ins', will have 0 incoming edges. Save sometime when final sort validation.
       delete this.ins[node];
       s.push(node);
     }
@@ -61,6 +61,8 @@ TopoSort.prototype.sort = function(){
         // decrease all adjacent nodes' incoming edge count. If any of them are 0,
         // put them in to set s.
         if(--this.ins[m] === 0){
+          // Any node does not exist in the 'ins', will have 0 incoming edges. Save sometime when final sort validation.
+          delete this.ins[node];
           s.push(m);
         }
       }.bind(this));
@@ -70,15 +72,17 @@ TopoSort.prototype.sort = function(){
   // Validate if the sorting has completed successfully.
   // All the node should have 0 incoming edges, any node's incoming edges count is non-zero,
   // there is a cycle among those nodes. This graph cannot be sorted.
-  var cycle = [];
-  for(node in this.ins){
-    if(this.ins[node] !== 0){
-      cycle.push(node);
-    }
-  }
+  var cycle = Object.getOwnPropertyNames(this.ins);
   if(cycle.length !== 0){
-    throw new Error('At least 1 cycle dependency in nodes: ' + cycle + '. Graph cannot be sorted!');
+    throw new Error('At least 1 cycle dependency in nodes: \n\n' + cycle.join('\n') + '\n\nGraph cannot be sorted!');
   }
 
   return l;
 };
+
+var tsort = new TopoSort();
+tsort.add('a', ['b']);
+tsort.add('b', ['c']);
+tsort.add('c', ['a']);
+tsort.add('d', ['a']);
+tsort.sort();
