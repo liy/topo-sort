@@ -79,10 +79,3 @@ TopoSort.prototype.sort = function(){
 
   return l;
 };
-
-var tsort = new TopoSort();
-tsort.add('a', ['b']);
-tsort.add('b', ['c']);
-tsort.add('c', ['a']);
-tsort.add('d', ['a']);
-tsort.sort();
