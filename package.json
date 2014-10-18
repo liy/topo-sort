@@ -1,0 +1,11 @@
+{
+  "name": "topo-sort",
+  "version": "0.1.0",
+  "description": "Simple implementation of topological sorting. No dependencies. A cycle graph will throw an error.",
+  "main": "tsort.js",
+  "keywords": [
+    "graph,sort,topological"
+  ],
+  "author": "Zhengyi Li <liy8272@gmail.com>",
+  "license": "MIT"
+}
