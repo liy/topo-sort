@@ -72,7 +72,7 @@ TopoSort.prototype.sort = function(){
   // Validate if the sorting has completed successfully.
   // All the node should have 0 incoming edges, any node's incoming edges count is non-zero,
   // there is a cycle among those nodes. This graph cannot be sorted.
-  var cycle = Object.getOwnPropertyNames(this.ins);
+  var cycle = Object.keys(this.ins);
   if(cycle.length !== 0){
     throw new Error('At least 1 cycle dependency in nodes: \n\n' + cycle.join('\n') + '\n\nGraph cannot be sorted!');
   }
