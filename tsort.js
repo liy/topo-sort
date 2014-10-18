@@ -46,8 +46,6 @@ TopoSort.prototype.sort = function(){
   // This error case can be handled by check incoming edges count in next step.
   for(node in this.ins){
     if(this.ins[node] === 0){
-      // Any node does not exist in the 'ins', will have 0 incoming edges. Save sometime when final sort validation.
-      delete this.ins[node];
       s.push(node);
     }
   }
@@ -56,13 +54,15 @@ TopoSort.prototype.sort = function(){
     var n = s.pop();
     l.push(n);
 
+    // Any node does not exist in the 'ins', will have 0 incoming edges.
+    // node n should be removed from incoming edge count map (no incoming edges anymore), once it is added to the final sorted list.
+    delete this.ins[n];
+
     if(this.map[n]){
       this.map[n].forEach(function(m){
         // decrease all adjacent nodes' incoming edge count. If any of them are 0,
         // put them in to set s.
         if(--this.ins[m] === 0){
-          // Any node does not exist in the 'ins', will have 0 incoming edges. Save sometime when final sort validation.
-          delete this.ins[node];
           s.push(m);
         }
       }.bind(this));

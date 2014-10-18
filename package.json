@@ -1,6 +1,6 @@
 {
   "name": "topo-sort",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Simple implementation of topological sorting. No dependencies. A cycle graph will throw an error.",
   "main": "tsort.js",
   "keywords": [
