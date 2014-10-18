@@ -1,6 +1,6 @@
 {
   "name": "topo-sort",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Simple implementation of topological sorting. No dependencies. A cycle graph will throw an error.",
   "main": "tsort.js",
   "keywords": [
@@ -8,8 +8,8 @@
   ],
   "author": "liy <liy8272@gmail.com> (http://aircapsule.com)",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/liy/topo-sort.git"
+    "type": "git",
+    "url": "https://github.com/liy/topo-sort.git"
   },
   "license": "MIT"
 }
