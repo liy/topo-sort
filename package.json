@@ -6,6 +6,10 @@
   "keywords": [
     "graph,sort,topological"
   ],
-  "author": "Zhengyi Li <liy8272@gmail.com>",
+  "author": "liy <liy8272@gmail.com> (http://aircapsule.com)",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/liy/topo-sort.git"
+  },
   "license": "MIT"
 }
