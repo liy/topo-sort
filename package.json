@@ -1,6 +1,6 @@
 {
   "name": "topo-sort",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Simple and fast implementation of topological sorting. No dependencies. A circular graph will throw an error with circular nodes info.",
   "main": "tsort.js",
   "keywords": [
