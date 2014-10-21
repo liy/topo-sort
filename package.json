@@ -4,7 +4,7 @@
   "description": "Simple and fast implementation of topological sorting. No dependencies. A circular graph will throw an error with circular nodes info.",
   "main": "tsort.js",
   "keywords": [
-    "graph,sort,topological,dependency"
+    "graph","sort","topological","dependency"
   ],
   "author": "liy <liy8272@gmail.com> (http://aircapsule.com)",
   "repository": {
