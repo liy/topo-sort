@@ -1,4 +1,5 @@
 # Usage
+Must not add any null, undefined or empty string node.
 ```javascript
 var TopoSort = require('topo-sort');
 

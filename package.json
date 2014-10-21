@@ -1,10 +1,10 @@
 {
   "name": "topo-sort",
   "version": "0.4.1",
-  "description": "Simple implementation of topological sorting. No dependencies. A cycle graph will throw an error.",
+  "description": "Simple and fast implementation of topological sorting. No dependencies. A circular graph will throw an error with circular nodes info.",
   "main": "tsort.js",
   "keywords": [
-    "graph,sort,topological"
+    "graph,sort,topological,dependency"
   ],
   "author": "liy <liy8272@gmail.com> (http://aircapsule.com)",
   "repository": {
